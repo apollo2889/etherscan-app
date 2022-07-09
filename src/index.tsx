@@ -9,8 +9,8 @@ const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
   <React.StrictMode>
     <MoralisProvider
-      serverUrl='https://kxvqkkx28oxi.usemoralis.com:2053/server'
-      appId='2I8KMaWVax7Yd8gdPAxmZY7FuqrjyTKdKSL7jmVE'
+      serverUrl={process.env.REACT_APP_MORALIS_DAPP_URL ?? ''}
+      appId={process.env.REACT_APP_MORALIS_APPLICATION_ID ?? ''}
     >
       <App />
     </MoralisProvider>
