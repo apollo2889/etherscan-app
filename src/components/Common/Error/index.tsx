@@ -1,15 +1,14 @@
 import React from 'react';
-import { Text } from '../Text';
 
 type ErrorProps = {
-  type?: 'fetch' | 'noData';
+  type?: 'invalidAddress' | 'noData';
 };
 
-export const Error = ({ type = 'fetch' }: ErrorProps) => {
+export const Error = ({ type = 'noData' }: ErrorProps) => {
   switch (type) {
-    case 'fetch':
-      return <Text>There is error while fetching data</Text>;
+    case 'invalidAddress':
+      return <span className='text-red-500'>Invalid Wallet Address</span>;
     case 'noData':
-      return <Text>No content found</Text>;
+      return <span>No content found</span>;
   }
 };
